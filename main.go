@@ -22,7 +22,27 @@ func main() {
 		exit(fmt.Sprintf("Failed to parse the CSV file: %s", *csvFilename))
 	}
 
-	fmt.Println(lines)
+	problems := parseLines(lines)
+
+	fmt.Println(problems)
+}
+
+func parseLines(lines [][]string) []problem {
+	ret := make([]problem, len(lines))
+
+	for i, line := range lines {
+		ret[i] = problem{
+			q: line[0],
+			a: line[1],
+		}
+	}
+
+	return ret
+}
+
+type problem struct {
+	q string
+	a string
 }
 
 func exit(msg string) {

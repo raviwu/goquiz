@@ -20,6 +20,7 @@
 
 ### Go ###
 # Binaries for programs and plugins
+goquiz
 *.exe
 *.exe~
 *.dll
